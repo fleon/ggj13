@@ -15,17 +15,19 @@ function showQuestion (n) {
     left: '-100%'
   }, function () {
     $(this).css('left', '100%').find('.answer').hide().animate({
-      marginTop: '+=30px'
-    });
+      marginTop: '50px'
+    }, 1);
   }).removeClass('q-current');
   $('#q-' + n.replace(/\./g, '-')).animate({
     left: 0
   }).addClass('q-current').find('.answer').each(function (i, el) {
-    console.log(i, this);
-    $(this).delay(500 * (i + 1)).show().css('opacity', 0).animate({
-      opacity: 1,
-      marginTop: '-=30px'
-    })
+    $(el).show().css('opacity', 0);
+    setTimeout(function () {
+      $(el).animate({
+        opacity: 1,
+        marginTop: '20px'
+      });
+    }, 500 * (i + 1));
   });
 }
 
