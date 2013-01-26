@@ -61,8 +61,8 @@ c.4:
  - ...: c.5
 c.5:
  The office gate is the same boring shade of gray.:
- -Don't go in: e
- -Enter the office: d
+ - Don't go in: e
+ - Enter the office: d
 
 #d office
 d:
@@ -109,4 +109,4 @@ d.11:
  
 #e venturing out
 e:
- You get a hot cup of tea from the tea stall:
+ You get a hot cup of tea from the tea stall
