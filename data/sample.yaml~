@@ -1,0 +1,42 @@
+#a - home morning
+a:
+ You wake up fresh in the morning.:
+ - ...: a.1
+a.1:
+ You go to the loo and take a leak ____.:
+ - Standing up: a.2.1
+ - Sitting down: a.2.2
+
+a.2.1:
+ You finish breakfast, your wife is still reading the paper:
+ - "Goodbye Honey!": b
+
+a.2.2:
+ You finish breakfast, your husband is not around:
+ - Leave: b
+
+#b - transportation
+b:
+ You approach your garage and find the bus waiting on the road.:
+ - Take the Bus: b.1.1
+ - Take the Car: b.1.2
+
+b.1.1:
+ The Bus driver says hello.:
+ - Ignore: b.2.1
+ - Smile: b.2.2
+
+b.2.1:
+ The bus driver gives a puzzled look.:
+ - ...: c
+b.2.2:
+ The bus driver smiled back, now happy.:
+ - ...: c
+
+b.1.2:
+ The Bus driver waited till you drove off in your expensive sedan.:
+ - ...: c
+
+#c - the scenery
+c:
+ There were poor people on the road.
