@@ -22,7 +22,7 @@ b:
  - Take the Car: b.1.2
 
 b.1.1:
- The Bus driver says hello.:
+ The bus driver says hello.:
  - Ignore: b.2.1
  - Smile: b.2.2
 
@@ -30,13 +30,102 @@ b.2.1:
  The bus driver gives a puzzled look.:
  - ...: c
 b.2.2:
- The bus driver smiled back, now happy.:
+ The bus driver smiles back, now happy.:
  - ...: c
 
 b.1.2:
- The Bus driver waited till you drove off in your expensive sedan.:
+ The Bus driver waits till you drive off in your expensive sedan.:
  - ...: c
 
 #c - the scenery
 c:
- There were poor people on the road.
+ You stop on the traffic signal. There are poor people everywhere.:
+ - ...: c.1
+c.1:
+ A skinny little boy in a torn vest asks for money.:
+ - Give him one coin: c.2.1
+ - Give him ten coins: c.2.1
+ - Look away: c.2.2
+c.2.1:
+ The boy thanks you and walks away.:
+ - ...: c.3
+c.2.2:
+ The boy starts cleaning your window with a damp cloth.:
+ - Scare him away: c.3
+ - Give him a coin: c.2.1
+c.3:
+ The cool morning breeze hits your tender face.:
+ - ...: c.4
+c.4:
+ People crowd around the tea stalls.:
+ - ...: c.5
+c.5:
+ The office gate is the same boring shade of gray.:
+ - Don't go in: e
+ - Enter the office: d
+
+#d office
+d:
+ You sit at your desk waiting for the next applicant.:
+ - ...: d.1
+d.1:
+ The tea is cold.:
+ - ...: d.2
+d.2:
+ A tall man in a gray suit walks into the room. His skin is dark colored.:
+ - Hey!: d.3
+ - Yo!: d.3
+d.3:
+ This man's experience qualifies him for this job.:
+ - ...: d.4
+d.4:
+ There are two stamps on the desk.:
+ - Accept: d.5
+ - Reject: d.5
+d.5:
+ The phone is ringing.:
+ - Pick up the phone: d.6
+ - Pick it up in style: d.6
+d.6:
+ Boss - "Don't give him the job"...:
+ - ...: d.7
+d.7:
+ ..."My brother in-law's cousin sister has a friend who might want the job." click:
+ - ...: d.8
+d.8:
+ There are still only two stamps on the table.:
+ - Accept: d.9.1
+ - Reject: d.9.2
+d.9.1:
+ The man thanks you and leaves, holding back his tears.:
+ - "Congratulations!": d.11
+ - ...: d.11
+d.9.2:
+ Your office is on the fifth floor.:
+ - ...: d.10
+d.10:
+ It was quite a fall. He survived.:
+ - "Oh.": d.11
+ - ...: d.11
+d.11:
+ It is time to head home.:
+ - ...: f
+#e venturing out
+e:
+ You get a hot cup of tea from the tea stall.:
+ - ...: e.1
+e.1:
+ A burqa clad woman stands beside you.:
+ - Offer Tea: e.2.1
+ - Say Hi: e.2.2
+e.2.1:
+ Her veil makes her very uncomfortable.:
+ - ...:e.3
+e.2.2:
+ She smiles, but you don't see her smile.:
+ - ...:e.3
+e.3:
+ Yo
+ 
+ 
+#f heading home

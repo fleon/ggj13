@@ -22,7 +22,7 @@ b:
  - Take the Car: b.1.2
 
 b.1.1:
- The Bus driver says hello.:
+ The bus driver says hello.:
  - Ignore: b.2.1
  - Smile: b.2.2
 
@@ -87,10 +87,10 @@ d.5:
  - Pick up the phone: d.6
  - Pick it up in style: d.6
 d.6:
- Boss - "Don't give him the job...":
+ Boss - "Don't give him the job"...:
  - ...: d.7
 d.7:
- \"...My brother in-law's cousin sister has a friend who wants the job.\" click:
+ ..."My brother in-law's cousin sister has a friend who might want the job." click:
  - ...: d.8
 d.8:
  There are still only two stamps on the table.:
@@ -98,15 +98,34 @@ d.8:
  - Reject: d.9.2
 d.9.1:
  The man thanks you and leaves, holding back his tears.:
+ - "Congratulations!": d.11
  - ...: d.11
 d.9.2:
  Your office is on the fifth floor.:
  - ...: d.10
 d.10:
- It was quite a fall. He didn't survive.:
- - Oh.: d.11
+ It was quite a fall. He survived.:
+ - "Oh.": d.11
+ - ...: d.11
 d.11:
- 
+ It is time to head home.:
+ - ...: f
 #e venturing out
 e:
- You get a hot cup of tea from the tea stall
+ You get a hot cup of tea from the tea stall.:
+ - ...: e.1
+e.1:
+ A burqa clad woman stands beside you.:
+ - Offer Tea: e.2.1
+ - Say Hi: e.2.2
+e.2.1:
+ Her veil makes her very uncomfortable.:
+ - ...:e.3
+e.2.2:
+ She smiles, but you don't see her smile.:
+ - ...:e.3
+e.3:
+ Yo
+ 
+ 
+#f heading home
