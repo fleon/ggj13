@@ -14,11 +14,19 @@ function showQuestion (n) {
   $('.q-current').animate({
     left: '-100%'
   }, function () {
-    $(this).css('left', '100%');
+    $(this).css('left', '100%').find('.answer').hide().animate({
+      marginTop: '+=30px'
+    });
   }).removeClass('q-current');
   $('#q-' + n.replace(/\./g, '-')).animate({
     left: 0
-  }).addClass('q-current');
+  }).addClass('q-current').find('.answer').each(function (i, el) {
+    console.log(i, this);
+    $(this).delay(500 * (i + 1)).show().css('opacity', 0).animate({
+      opacity: 1,
+      marginTop: '-=30px'
+    })
+  });
 }
 
 $(document).ready(function () {
@@ -94,7 +102,7 @@ $(document).ready(function () {
         } catch (e) {
           console.log(e.message);
         }
-      });
+      }).hide();
       showQuestion(firstKey);
 		}
 	});
