@@ -1,0 +1,419 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"even",
+				"eventType"
+			],
+			[
+				"curre",
+				"currentOp"
+			],
+			[
+				"curr",
+				"currentOp"
+			],
+			[
+				"vwo",
+				"vwo-contextual-box"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"vwo_inser",
+				"vwo_insert_menu"
+			],
+			[
+				"pad",
+				"padding-right"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "---\n# Game Scene\n\nVariables:\n  - Player:\n    - If (PlayerGender is Male): Elric\n    - Else: Amy\n\nSpeakers:\n  - Elric:\n      Normal: CharacterAvatar_Elric.png\n      Sad: CharacterAvatar_Elric.png\n  - Elric:\n      Normal: CharacterAvatar_Elric.png\n      Sad: CharacterAvatar_Elric.png\n  - Flippers:\n      Normal: CharacterAvatar_Flippers.png\n      Sad: CharacterAvatar_Flippers.png\n\nDialogues:\n  - Scene 2 Frame 1:\n    - Player (Confused): |\n        ... ...\n    - Player (Confused): |\n        Where am I?\n    - Player (Confused): |\n        ... ...\n    - Player (Confused): |\n        What is this place?\n  - Scene 2 Frame 2:\n    - Player (Surprised): |\n        Whoa! Looks like something's shining over\n        there!\n  - Scene 2 Frame 3:\n    - Player (Surprised): |\n        Wow, its so shiny! Lets look at whats in it!\n  - Scene 2 Frame 4:\n    - Player (Confused): |\n        These letters spell out BRIDGE.\n        Hmm...\n  - Scene 2 Frame 4:\n    - Player (Confused): |\n        That's what I need to get across!\n        \nMessages:\n  - Scene 2 Message 1: |\n      Touch and drag the character to walk to the\n      shiny bag above.\n  - Scene 2 Message 2: |\n      Tap the bag repeatedly to extract its contents.\n  - Scene 2 Message 3: |\n      Drag the letters in the pile to water to bridge\n      the gap between the two islands and tap 'Freeze'!\n  - Scene 2 Message 4: |\n      Great! Now drag the character to move to the other\n      island across the bridge.\n  - Scene 2 Message 4: |\n      Great! Now drag the character to move to the other\n      island across the bridge.\n  - Scene 2 Message 5: |\n      You can swipe to pan the screen and pinch to zoom in\n      and out. Go ahead, try it!\n\nCinematics\n  - PlayerLooksAround:\n    - WithCharacter (Player):\n      - StopFacingRight\n      - WaitFor: 100ms\n      - StopFacingBottom\n      - WaitFor: 100ms\n      - StopFacingLeft\n      - WaitFor: 100ms\n      - StopFacingTop\n      - WaitFor: 100ms\n  - PlayerExclaims:\n    - WithCharacter (Player):\n      - MakeBubbleAppear: Exclamation\n  - PlayerIsConfused:\n    - WithCharacter (Player):\n      - MakeBubbleAppear: QuestionMark\n\nActionSequences:\n  - SceneWasLoaded:\n    - LoadMap: 1. Lost\n  - MapWasLoaded (1. Lost):\n    - FocusOnMap: PositionOfPlayer\n    - PlayCinematic: PlayerLooksAround\n    - ShowDialogueWindow\n    - BeginDialogue: Scene 2 Frame 1\n    - HideDialogueWindow\n    - PlayCinematic: PlayerLooksAround\n    - PlayCinematic: PlayerExclaims\n    - ShowDialogueWindow\n    - BeginDialogue: Scene 2 Frame 2\n    - HideDialogueWindow\n    - ShowMessage: Scene 2 Message 1\n    - WaitFor: InteractedWith (MagicalBag)\n    - ShowDialogueWindow\n    - BeginDialogue: Scene 2 Frame 3\n    - HideDialogueWindow\n    - ShowMessage: Scene 2 Message 2\n    - ShowLetterPile\n    - DisableLetterPile\n    - WaitFor: InteractedWith (MagicalBag)\n    - AddLetterToPile: B\n    - WaitFor: InteractedWith (MagicalBag)\n    - AddLetterToPile: R\n    - WaitFor: InteractedWith (MagicalBag)\n    - AddLetterToPile: I\n    - WaitFor: InteractedWith (MagicalBag)\n    - AddLetterToPile: D\n    - WaitFor: InteractedWith (MagicalBag)\n    - AddLetterToPile: G\n    - WaitFor: InteractedWith (MagicalBag)\n    - AddLetterToPile: E\n    - WaitFor: 500ms\n    - ShowDialogueWindow\n    - Begin Dialogue: Scene 2 Frame 4\n    - PlayCinematic: PlayerExclaims\n    - Begin Dialogue: Scene 2 Frame 5\n    - HideDialogueWindow\n    - ShowMessage: Scene 2 Message 3\n    - WaitFor: IslandConnected (Island 2)\n    - ShowMessage: Scene 2 Message 4\n    - WaitFor: SteppedOn (Island 2):\n    - ShowMessage: Scene 2 Message 5\n    - WaitFor: MapWasPanned and MapWasZoomed\n    - AndTrigger: MapWasZoomedAndPanned",
+			"file": "/Users/fleon/Dropbox/Spellbound/Spellbound-iOS/Spellbound/SPLGameScene.yaml",
+			"file_size": 3655,
+			"file_write_time": 1356794946000000,
+			"settings":
+			{
+				"buffer_size": 3642,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "### \n# Echoes of the heart\n###\n\n---\n\n\n1: This is a question?\n	- Yes: 2\n	- No: 56\n2: What is going on?\n	- I don't know: 4\n",
+			"file": "/Users/fleon/Dropbox/_LISTS/gameplay idea.yaml",
+			"file_size": 257,
+			"file_write_time": 1359131149000000,
+			"settings":
+			{
+				"buffer_size": 121,
+				"line_ending": "Unix",
+				"name": "gameplay idea.txt"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 360.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Bookmarks: Clear All"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/fleon/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/fleon/Dropbox/FleonLabs/wp-content/themes/twentyeleven/style.css",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/jsdoc/templates/JSDoc-DataTables/tmpl/methods.tmpl",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/jsdoc/templates/JSDoc-DataTables/tmpl/index.tmpl",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/app/static/iframe_content/inject.js",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/app/lib/models/element-info.js",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/app/lib/utils.js",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/app/lib/editor.js",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/app/lib/views/views.js",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Mini-Editor/js/DesignerApp.js",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/res/css/designer.css",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/res/from backbone.html",
+		"/Users/fleon/Dropbox/vwoapp/VWO-Ember-Editor/res/original html",
+		"/Users/fleon/Dropbox/vwoapp/templates/source/create/widgets/designer-topbar.tpl",
+		"/Users/fleon/Dropbox/vwoapp/templates/source/create/designer.tpl",
+		"/Users/fleon/Dropbox/vwoapp/templates/source/scripts.tpl",
+		"/Users/fleon/Dropbox/vwoapp/jscript/variations.js",
+		"/Users/fleon/Dropbox/vwoapp/jscript/ui.js",
+		"/Users/fleon/Dropbox/vwoapp/jscript/designer.js",
+		"/Users/fleon/Dropbox/vwoapp/jscript/inject.js",
+		"/Users/fleon/Dropbox/vwoapp/jscript/new/EventDispatcher.js",
+		"/Users/fleon/Dropbox/vwoapp/jscript/Backbone.js",
+		"/Users/fleon/Dropbox/vwoapp/jscript/vwoelement.js",
+		"/Users/fleon/Dropbox/vwoapp/MiniEditor/VWO-Mini-Editor/README.md",
+		"/Users/fleon/Dropbox/vwoapp/jscript/new/dummy1.js",
+		"/Users/fleon/Dropbox/vwoapp/create/index.php",
+		"/Users/fleon/Dropbox/vwoapp/create/actions.php",
+		"/Users/fleon/Dropbox/vwoapp/jscript/test.js",
+		"/Users/fleon/Dropbox/vwoapp/test/create/createProcessTest.php",
+		"/Users/fleon/Dropbox/vwoapp/test/create/designerTest.php",
+		"/Users/fleon/Dropbox/vwoapp/test/jscript/designerTest.js",
+		"/Users/fleon/Dropbox/vwoapp/styles/designer.css",
+		"/Users/fleon/Dropbox/vwoapp/log/vwoapp-error.log",
+		"/Users/fleon/Dropbox/vwoapp/templates/source/layout.tpl",
+		"/Users/fleon/Dropbox/vwoapp/jscript/dragDrop.js",
+		"/Users/fleon/Dropbox/vwoapp/reports/common.php",
+		"/Users/fleon/Dropbox/vwoapp/jscript/schedule.js",
+		"/Users/fleon/Dropbox/vwoapp/templates/source/account/partners.tpl",
+		"/Users/fleon/Dropbox/vwoapp/templates/source/account/index.tpl"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"VWO.ElementInfo =",
+			"ElementInfo",
+			"$el",
+			"trigger",
+			"delegateEvents",
+			"////",
+			"/////",
+			"////",
+			"endOpera",
+			"////",
+			"///",
+			"eSRC",
+			"chang",
+			"eSRC",
+			"////",
+			"endOperation = fun",
+			"endOperation",
+			"////",
+			"move = funct",
+			"tempChanges",
+			"move = fun",
+			"move",
+			"////",
+			"endOperation",
+			"/////",
+			"cancel",
+			"Cancel",
+			"////",
+			".frame",
+			"VWOContextMenu",
+			"openContent",
+			"//////",
+			"insertAfter",
+			"new window.top",
+			"HEAD",
+			"Done",
+			"click",
+			"insert",
+			"toggleDeviceMenu",
+			"mode",
+			"selected",
+			"device",
+			"VWO",
+			"Enter",
+			"enter your "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/fleon/Dropbox/Spellbound/Spellbound-iOS/Spellbound/SPLGameScene.yaml",
+					"settings":
+					{
+						"buffer_size": 3642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3642,
+								3642
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"indent": 1.0,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 80.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/fleon/Dropbox/_LISTS/gameplay idea.yaml",
+					"settings":
+					{
+						"buffer_size": 121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"auto_name": "gameplay idea.txt",
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true
+}
