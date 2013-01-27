@@ -14,11 +14,21 @@ function showQuestion (n) {
   $('.q-current').animate({
     left: '-100%'
   }, function () {
-    $(this).css('left', '100%');
+    $(this).css('left', '100%').find('.answer').hide().animate({
+      marginTop: '50px'
+    }, 1);
   }).removeClass('q-current');
   $('#q-' + n.replace(/\./g, '-')).animate({
     left: 0
-  }).addClass('q-current');
+  }).addClass('q-current').find('.answer').each(function (i, el) {
+    $(el).show().css('opacity', 0);
+    setTimeout(function () {
+      $(el).animate({
+        opacity: 1,
+        marginTop: '20px'
+      });
+    }, 500 * (i + 1));
+  });
 }
 
 $(document).ready(function () {
@@ -94,7 +104,7 @@ $(document).ready(function () {
         } catch (e) {
           console.log(e.message);
         }
-      });
+      }).hide();
       showQuestion(firstKey);
 		}
 	});
