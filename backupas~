@@ -54,7 +54,7 @@ c.2.2:
  - Scare him away: c.3
  - Give him a coin: c.2.1
 c.3:
- It is nice and cool this morning.:
+ The cool morning breeze hits your tender face.:
  - ...: c.4
 c.4:
  People crowd around the tea stalls.:
@@ -222,7 +222,7 @@ f.s.5:
 
 #t time-travel
 t:
- The African American man reveals himself as TTSciMan1000, a time-travel scientist:
+ The African American man reveals himself as a time-travel scientist:
  - Oh!: t.1
  - ...: t.1
 t.1:
@@ -237,7 +237,7 @@ f.q:
  Suddenly! You find a dog in the middle of the road!:
  - ...: f.q.1
 f.q.1:
- A bus approaches!:
+ A bus is approaches!:
  - Save the dog!: f.q.4
  - Watch patiently.: f.q.2
 f.q.2:
@@ -253,14 +253,14 @@ f.q.4:
  - I'm too young to die: f.q.5
 f.q.5:
  You're dead.:
- - ...: END
+ - ...: E
 
 #bt
 bt:
  You trip and fall down:
  - ...: bt.1
 bt.1:
- ..."Why do we fall?" asks the man as he helps you up.:
+ ..."Why do we fall?" asks the man as helps you up.:
  - So we might learn to pick ourselves up!: bt.3
  - Gravity?: bt.2
 bt.2:
@@ -274,7 +274,7 @@ bt.4:
  - ...: bt.5
 bt.5:
  The core is strapped to you Bat-craft.:
- - Leave without the core: bt.n
+ - Leave without the core bt.n
  - Leave with the core: bt.c
 bt.n:
  You hover around as you watch Gotham turn to ashes.:
@@ -298,33 +298,14 @@ bt.c:
  - ae: bt.c.4
  - af: bt.c.5
  - ag: bt.c.6
+ - ah: bt.c.7
 
 bt.c.0:
  Windshield Wiper ACTIVATED!:
  - Try Again: bt.c
 bt.c.1:
  Lucius Lucious Massage ACTIVATED!:
- - ..."No Lucius, not now!": bt.c.d
-bt.c.2:
- Champagne Cooler ACTIVATED!:
- - ..."Oh Rachel!": bt.c.d
-bt.c.3:
- Rear Defogger ACTIVATED!:
- - ..."ARGH! WHERE IS IT?": bt.c.d
-bt.c.4:
- Reverse:
- - ..."No, not back to Gotham!": bt.c.d
-bt.c.5:
- Siri ACTIVATED!:
- - ..."WHY DO YOU WANT TO KILL ME?": bt.c.5.1
-bt.c.5.1:
- ..."Siri does not understand":
- - "WHERE IS IT?" : bt.c.d
-bt.c.6:
- Auto Pilot ACTIVATED!:
- - "Thank god!": bt.c.6.1
-#bt.c.6.1:
- 
+ - "No Lucius, not now!": bt.c.d
 
 bt.c.d:
  As the core explodes, you scream:
@@ -341,7 +322,7 @@ h:
 END:
  Thank you for playing!:
  - What an amazing game, again!: a
- - Next game please!: END.1
+ - Next game please! END.1
 END.1:
  Thanks again for playing! Goodbye!
  

@@ -54,7 +54,7 @@ c.2.2:
  - Scare him away: c.3
  - Give him a coin: c.2.1
 c.3:
- The cool morning breeze hits your tender face.:
+ It is nice and cool this morning.:
  - ...: c.4
 c.4:
  People crowd around the tea stalls.:
@@ -72,7 +72,7 @@ d.1:
  The tea is cold.:
  - ...: d.2
 d.2:
- A tall man in a gray suit walks into the room. His skin is dark colored.:
+ A tall African American man in a black overcoat walks into the room.:
  - Hey!: d.3
  - Yo!: d.3
 d.3:
@@ -83,49 +83,265 @@ d.4:
  - Accept: d.5
  - Reject: d.5
 d.5:
- The phone is ringing.:
+ You pick up the stamp, but the phone rings.:
  - Pick up the phone: d.6
  - Pick it up in style: d.6
 d.6:
- Boss - "Don't give him the job"...:
+ Boss - "Don't take any more applicants for the job"...:
  - ...: d.7
 d.7:
- ..."My brother in-law's cousin sister has a friend who might want the job." click:
+ ..."My brother in-law's cousin sister has a friend who might want it." <click>:
  - ...: d.8
 d.8:
  There are still only two stamps on the table.:
  - Accept: d.9.1
  - Reject: d.9.2
 d.9.1:
- The man thanks you and leaves, holding back his tears.:
- - "Congratulations!": d.11
+ The man shakes your hand and leaves in a hurry.:
+ - "Look puzzled": d.11
  - ...: d.11
 d.9.2:
- Your office is on the fifth floor.:
+ The man shakes your hand and jumps through the window..:
  - ...: d.10
 d.10:
- It was quite a fall. He survived.:
- - "Oh.": d.11
+ To avoid the crowd, you hurry out.:
  - ...: d.11
 d.11:
- It is time to head home.:
+ You leave the office.:
  - ...: f
 #e venturing out
 e:
  You get a hot cup of tea from the tea stall.:
+ - ...: e.0.1
+e.0.1:
+ You have a pleasant conversation with an African American man.:
  - ...: e.1
 e.1:
  A burqa clad woman stands beside you.:
  - Offer Tea: e.2.1
  - Say Hi: e.2.2
+ - Ignore: e.2.3
 e.2.1:
  Her veil makes her very uncomfortable.:
- - ...:e.3
+ - ...: e.3
 e.2.2:
  She smiles, but you don't see her smile.:
- - ...:e.3
+ - ...: e.3
+e.2.3:
+ Not a good idea speaking to strangers?:
+ - Yes: e.3
+ - No: e.3
+ - She's weird: e.3
 e.3:
- Yo
- 
- 
+ <ring ring> That is your cell phone.:
+ - ...: e.4
+e.4:
+ Colleague - "Not coming to work today?":
+ - Yes: e.5
+ - No: e.5
+ - Maybe Later: e.5
+e.5:
+ Colleague - "Anyway, listen, about the nuclear waste"...:
+ - ...: e.6
+e.6:
+ ..."We've paid off the right officials. Ganga or Yamuna?":
+ - Ganga: e.7.1
+ - Yamuna: e.7.1
+ - Proper Disposal (Delayed due to paperwork): e.7.2
+e.7.1:
+ Colleague - "You saved my behind, thanks!":
+ - ...: e.8
+e.7.2:
+ Colleague - "Great, now you'll get us both fired!":
+ - ...: e.8
+e.8:
+ A hot girl in a tank top crosses the street.:
+ - ...: e.9
+e.9:
+ You make eye contact with the burqa clad lady.:
+ - Roll your eyes in disgust: e.10.1
+ - Console Her: e.10.2
+ - "Suhhweet!": e.10.3
+e.10.1:
+ The lady looks down and walks away very slowly.:
+ - ...: e.11
+e.10.2:
+ The lady makes a sad face. But you don't see it.:
+ - ...: e.11
+e.10.3:
+ Shocked, the lady runs away!:
+ - ...: e.11
+e.11:
+ The winter sun added to the beauty of the calm and lazy afternoon.:
+ - ...: e.12
+e.12:
+ <ring> Phone.:
+ - "Like I have a choice!": e.13
+e.13:
+ <ring> "The hell I do." It's your boss.:
+ - Answer: e.14
+ - Reject Call: f
+e.14:
+ Boss - "I'm sorry to inform you but"...:
+ - ...: e.15
+e.15:
+ ..."YOU'RE FIRED!" <click>:
+ - ...: e.16
+e.16:
+ The afternoon is still pretty calm.:
+ - ...: f
+
 #f heading home
+f:
+ You start towards home.:
+ - Taking the scenic route: f.s
+ - The shortcut.: f.q
+
+#f.s Scenic route
+f.s:
+ The leaves on the cottonwood dance in the cool and gentle breeze.:
+ - Emotional and touchy moment: f.s.1
+ - NEXT!: f.s.1
+f.s.1:
+ There is a fork in the road.:
+ - Robert Frost Boulevard: f.s.4
+ - The Safe Way: f.s.2
+f.s.2:
+ You take the safe route and...:
+ - ...: f.s.3
+f.s.3:
+ ...happily ever after!:
+ - ...: END
+f.s.4:
+ You find a stranger who offers you some hard-boiled sweets:
+ - Blue Sweet: f.s.5
+ - Red Sweet: t
+f.s.5:
+ The sweet is tasty. Thanking the stranger, you continue walking.:
+ - ...: h
+
+#t time-travel
+t:
+ The African American man reveals himself as TTSciMan1000, a time-travel scientist:
+ - Oh!: t.1
+ - ...: t.1
+t.1:
+ TTSciMan1000 - "Where would you like to go?":
+ - This day, again!: a
+ - My office!: d
+ - Walk away: bt
+ - Ignore: h
+ 
+#f.q Shortcut route
+f.q:
+ Suddenly! You find a dog in the middle of the road!:
+ - ...: f.q.1
+f.q.1:
+ A bus approaches!:
+ - Save the dog!: f.q.4
+ - Watch patiently.: f.q.2
+f.q.2:
+ The bus races past. The dog is dead on the road, and a little bit on you, and the wall over there.:
+ - ...: f.q.3
+f.q.3:
+ You continue walking.:
+ - ...: h
+f.q.4:
+ The bus hits you, the dog is saved.:
+ - AAH aaah: f.q.5
+ - ...aaaahhh: f.q.5
+ - I'm too young to die: f.q.5
+f.q.5:
+ You're dead.:
+ - ...: END
+
+#bt
+bt:
+ You trip and fall down:
+ - ...: bt.1
+bt.1:
+ ..."Why do we fall?" asks the man as he helps you up.:
+ - So we might learn to pick ourselves up!: bt.3
+ - Gravity?: bt.2
+bt.2:
+ You get up and walk away.:
+ - ...: h
+bt.3:
+ Man - "Gotham it is...":
+ - ...!: bt.4
+bt.4:
+ ..."I'm Batman?!":
+ - ...: bt.5
+bt.5:
+ The core is strapped to you Bat-craft.:
+ - Leave without the core: bt.n
+ - Leave with the core: bt.c
+bt.n:
+ You hover around as you watch Gotham turn to ashes.:
+ - ...: bt.n.1
+bt.n.1:
+ You sit in a cafe in Florence, sipping some wine.:
+ - ...: bt.n.2
+bt.n.2:
+ A mutated approaches you.:
+ - ...: bt.n.3
+bt.n.3:
+ ..."Why master Bruce, why?":
+ - ...: END
+
+bt.c:
+ As you approach the drop-zone, you wonder where the Auto-Pilot button is.:
+ - aa: bt.c.0
+ - ab: bt.c.1
+ - ac: bt.c.2
+ - ad: bt.c.3
+ - ae: bt.c.4
+ - af: bt.c.5
+ - ag: bt.c.6
+
+bt.c.0:
+ Windshield Wiper ACTIVATED!:
+ - Try Again: bt.c
+bt.c.1:
+ Lucius Lucious Massage ACTIVATED!:
+ - ..."No Lucius, not now!": bt.c.d
+bt.c.2:
+ Champagne Cooler ACTIVATED!:
+ - ..."Oh Rachel!": bt.c.d
+bt.c.3:
+ Rear Defogger ACTIVATED!:
+ - ..."ARGH! WHERE IS IT?": bt.c.d
+bt.c.4:
+ Reverse:
+ - ..."No, not back to Gotham!": bt.c.d
+bt.c.5:
+ Siri ACTIVATED!:
+ - ..."WHY DO YOU WANT TO KILL ME?": bt.c.5.1
+bt.c.5.1:
+ ..."Siri does not understand":
+ - "WHERE IS IT?" : bt.c.d
+bt.c.6:
+ Auto Pilot ACTIVATED!:
+ - "Thank god!": bt.c.6.1
+#bt.c.6.1:
+ 
+
+bt.c.d:
+ As the core explodes, you scream:
+ - Nooooooooooooo!: END
+
+#h home
+h:
+ You reach home:
+ - ...: END
+#h1:
+# So,
+
+#END Thank you for playing
+END:
+ Thank you for playing!:
+ - What an amazing game, again!: a
+ - Next game please!: END.1
+END.1:
+ Thanks again for playing! Goodbye!
+ 
