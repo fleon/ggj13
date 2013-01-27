@@ -111,7 +111,6 @@ $(document).ready(function () {
       
       $('#q-title-screen button').click(function () {
         showQuestion(firstKey);
-        $('.restart-button').fadeIn();
       });
       
       showQuestion('title-screen');
