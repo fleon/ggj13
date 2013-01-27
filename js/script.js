@@ -35,6 +35,10 @@ function showQuestion (n) {
   });
 }
 
+
+var btnKinds = ['btn-info', 'btn-success', 'btn-warning', 'btn-danger'];		
+var r = rand(0, btnKinds.length - 1);
+
 $(document).ready(function () {
   $('body').keydown(function (e) {
     e.preventDefault();
@@ -83,11 +87,9 @@ $(document).ready(function () {
         questionDOMString += q[0];
         questionDOMString += '<br/>';
 		
-        var btnKinds = ['btn-info', 'btn-success', 'btn-warning', 'btn-danger'];
-		
         if (q.length > 1) {
           for (var i = 1, il = q.length; i < il; i++) {
-            questionDOMString += '<button class="btn btn-large ' + btnKinds[rand(0, btnKinds.length - 1)] + ' answer a-' + key +
+            questionDOMString += '<button class="btn btn-large ' + btnKinds[r] + ' answer a-' + key +
               ' type="button" data-q="' + q[i][1] + '" data-action="' + escape(q[i][2]) + '">';
             questionDOMString += q[i][0];
             questionDOMString += '</button>';
