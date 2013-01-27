@@ -229,9 +229,11 @@ t.1:
  TTSciMan1000 - "Where would you like to go?":
  - This day, again!: a
  - My office!: d
- - Walk away: bt
+ - "Why should I believe you?": t.2
  - Ignore: h
- 
+t.2:
+ TTSciMan1000 - "I can only show you the door, you're the one who has to walk through it":
+ - Walk away: bt
 #f.q Shortcut route
 f.q:
  Suddenly! You find a dog in the middle of the road!:
@@ -248,12 +250,25 @@ f.q.3:
  - ...: h
 f.q.4:
  The bus hits you, the dog is saved.:
- - AAH aaah: f.q.5
- - ...aaaahhh: f.q.5
+ - AAH aaah: f.q.6
+ - ...aaaahhh: f.q.6
  - I'm too young to die: f.q.5
 f.q.5:
+ You notice a dark silhouette through your fading vision:
+ - ...: f.q.7
+f.q.6:
  You're dead.:
  - ...: END
+f.q.7:
+ The man offers you hard-boiled sweets.:
+ - ...: f.q.8
+f.q.8:
+ As a last ditch attempt, you reach out for one with your fading energy.:
+ - Red Sweet: t
+ - Blue Sweet: f.q.9
+f.q.9:
+ The sweet is very tasty.:
+ - ...: f.q.6
 
 #bt
 bt:
@@ -323,9 +338,23 @@ bt.c.5.1:
 bt.c.6:
  Auto Pilot ACTIVATED!:
  - "Thank god!": bt.c.6.1
-#bt.c.6.1:
+bt.c.6.1:
+ ..."What can I get you?" said the waiter at a cafe in Florence:
+ - The finest burbon you have!: bt.c.7 
+ - Protien Shake, shaken.: bt.c.7
+ - Dry martini, shaken, not stirred: bt.c.7
+bt.c.7:
+ Waiter - "Would you like some fries to go with that?":
+ - ...: bt.c.8
+bt.c.8:
+ As the waiter pours your drink you see your Butler in the distance:
+ - Wave and say hello: bt.c.9
+ - Hows it hanging?: bt.c.9
+ - Acknowledge and nod: bt.c.9
+bt.c.9:
+ Your drink is good.:
+ - ...: END
  
-
 bt.c.d:
  As the core explodes, you scream:
  - Nooooooooooooo!: END
@@ -333,15 +362,34 @@ bt.c.d:
 #h home
 h:
  You reach home:
- - ...: END
-#h1:
-# So,
+ - ...: h1
+h1:
+ There is only one car in the garage.:
+ - ...: h2
+h2:
+ You walk into the  ______:
+ - Kitchen: h.k
+ - Bedroom: h.b
+h.k:
+ The kitchen is empty.:
+ - ...: h2
+h.b:
+ The bedroom is empty, the bedsheets are undone.:
+ - Sleep: END
+ - ...: h2
 
 #END Thank you for playing
 END:
  Thank you for playing!:
  - What an amazing game, again!: a
- - Next game please!: END.1
+ - We're done here: END.1
+ - Take me back to...: END.2
 END.1:
  Thanks again for playing! Goodbye!
- 
+END.2:
+ Back to the ____:
+ - Start: a
+ - Garage: b
+ - The Road : c
+ - Office Gate : c.3
+ - Heading Home : f
