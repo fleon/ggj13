@@ -6,6 +6,10 @@ function ChangeBackgroundColor (color) {
   });
 }
 
+function rand(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 String.prototype.trim = function () {
   return this.replace(/^ *(.*) *$/, '$1');
 }
@@ -27,7 +31,7 @@ function showQuestion (n) {
         opacity: 1,
         marginTop: '20px'
       });
-    }, 500 * (i + 1));
+    }, 1000);
   });
 }
 
@@ -78,15 +82,12 @@ $(document).ready(function () {
         var questionDOMString = '<p class="lead question" id="q-' + key.replace(/\./g, '-') + '">';
         questionDOMString += q[0];
         questionDOMString += '<br/>';
-
+		
+		var btnKinds = ['btn-primary', 'btn-info', 'btn-success', 'btn-warning', 'btn-danger', 'btn-inverse'];
+		
         if (q.length > 1) {
-          questionDOMString += '<button class="btn btn-large btn-primary answer a-' + key +
-            '" type="button" data-q="' + q[1][1] + '" data-action="' + escape(q[1][2]) + '">';
-          questionDOMString += q[1][0];
-          questionDOMString += '</button>';
-
-          for (var i = 2, il = q.length; i < il; i++) {
-            questionDOMString += '<button class="btn btn-large answer a-' + key +
+          for (var i = 1, il = q.length; i < il; i++) {
+            questionDOMString += '<button class="btn btn-large ' + btnKinds[rand(0, btnKinds.length - 1)] + ' answer a-' + key +
               ' type="button" data-q="' + q[i][1] + '" data-action="' + escape(q[i][2]) + '">';
             questionDOMString += q[i][0];
             questionDOMString += '</button>';
