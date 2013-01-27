@@ -83,7 +83,7 @@ $(document).ready(function () {
         questionDOMString += q[0];
         questionDOMString += '<br/>';
 		
-		var btnKinds = ['btn-primary', 'btn-info', 'btn-success', 'btn-warning', 'btn-danger', 'btn-inverse'];
+        var btnKinds = ['btn-info', 'btn-success', 'btn-warning', 'btn-danger'];
 		
         if (q.length > 1) {
           for (var i = 1, il = q.length; i < il; i++) {
@@ -106,7 +106,12 @@ $(document).ready(function () {
           console.log(e.message);
         }
       }).hide();
-      showQuestion(firstKey);
+      
+      $('#q-title-screen button').click(function () {
+        showQuestion(firstKey);
+      });
+      
+      showQuestion('title-screen');
 		}
 	});
 }); 
